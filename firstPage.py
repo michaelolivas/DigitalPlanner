@@ -26,7 +26,6 @@ class FirstPage(App):
                             color = '#745E59')
         
         self.button = Button(text="New Page",
-                             #pos = (0, 7000),
                              size = (300, 100),
                              bold = True,
                              size_hint = (None, None),
@@ -36,9 +35,16 @@ class FirstPage(App):
                              background_normal = "")
 
         self.window.add_widget(self.header)
+        self.button.bind(on_press=self.callback)
         self.window.add_widget(self.button)
 
         return self.window
+    
+    def callback(self, instance):
+        self.button.text = "Opening"
+
+        self.header.text = "new page"
+        
 
 
 if __name__ == '__main__':   
