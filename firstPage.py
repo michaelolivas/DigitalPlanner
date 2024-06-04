@@ -10,7 +10,7 @@ from kivy.uix.button import Button
 from kivy.uix.textinput import TextInput
 
 class FirstPage(App):
-    
+
     def build(self):
         self.window = FloatLayout()
         self.window.cols = 1
@@ -42,10 +42,32 @@ class FirstPage(App):
     
     def callback(self, instance):
         self.button.text = "Opening"
-
-        self.header.text = "new page"
+        self.header.text = " "
+        SecondPage().run()
         
 
+class SecondPage(App):
+
+    def build(self):
+        self.window = FloatLayout()
+        self.window.cols = 1
+        self.window.size_hint = (0.6, 0.7)
+        self.window.pos_hint = {'center_x': 0.5, 'center_y': 0.5}
+        
+        self.header = Label(text="New Page",
+                           size_hint = (0.2,0.2),
+                           pos_hint = {'center_x': 0.5, 'center_y': 0.8},
+                           valign = ('top'),
+                           font_size = 128, 
+                           bold = True,
+                           color = '#745E59')
+        
+        #self.add_widget(FirstPage(header.text==""))
+        #self.remove_widget(MyCard(name='cardd'))
+        self.window.add_widget(self.header)
+        
+
+        return self.window
 
 if __name__ == '__main__':   
     FirstPage().run()
