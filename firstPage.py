@@ -62,8 +62,6 @@ class SecondPage(App):
                            bold = True,
                            color = '#745E59')
         
-        #self.add_widget(FirstPage(header.text==""))
-        #self.remove_widget(MyCard(name='cardd'))
         self.window.add_widget(self.header)
         
 
